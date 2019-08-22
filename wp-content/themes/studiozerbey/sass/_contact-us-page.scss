@@ -83,8 +83,12 @@
                 display: none;
               }
 
-              .ginput_container {
-                border: 1px solid $color_border_grey;
+              .ginput_container {                
+                input,
+                textarea {
+		            border: 1px solid $color_border_grey;
+		            padding: 12px 16px;
+                }
               }
 
 

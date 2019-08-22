@@ -1,8 +1,86 @@
+#gform_wrapper_2 {
+	
+	.gform_body {
+	  .gform_fields {
+	    .gfield {
+	      label {
+	        text-transform: uppercase;
+	        font-size: 14px;
+	        color: $color_button_grey;
+	        letter-spacing: 1px;
+	        line-height: 16.5px;
+	        font-family: 'Calibri', 'sans-serif';
+	      }
+	
+	      .ginput_container {
+	        input,
+	        textarea {
+	          width: 100%;
+	          border: 0;
+	        }
+	      }
+	
+	      .gfield_required {
+	        display: none;
+	      }
+	
+	      .ginput_container {                
+	        input,
+	        textarea {
+	            border: 1px solid $color_border_grey;
+	            padding: 12px 16px;
+	        }
+	      }
+	
+	
+	    }
+	  }
+        
+        select {
+			background: #fff;
+    		height: 44px;
+    		font-family: 'Calibri', 'sans-serif';
+		}
+        
+	 	ul#gform_fields_2 li {
+	    	margin-bottom: 16px;
+		
+		
+		&#field_2_1 {
+	    	margin-top: 50px;
+		}
+		
+		}
+     
+      }
+      
+		.gform_footer {
+          .gform_button {
+	          background-color: #fff;
+            text-transform: uppercase;
+            font-size: 10px;
+            color: $color_button_grey;
+            letter-spacing: 0.75px;
+            border: 1px solid $color_border_grey;
+            padding: 12px 16px;
+            background: none;
+            width: 200px;
+          }
+        } 
+
+}
+
+
 .individual-project-page-wrapper {
 
   .two-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
     font-family: 'Calibri';
     
     div {
@@ -10,9 +88,16 @@
     }
 
     @include tablet-landscape {
-      flex-flow: row wrap;
-      align-items: flex-start;
-      justify-content: space-between;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row wrap;
+              flex-flow: row wrap;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       .left-column {
         width: 46%;
       }
@@ -30,88 +115,121 @@
     letter-spacing: .5px;
   }
 
-  .thumbnails-gallery {
-    margin-bottom: 15px;
-    display: none;
-    @include tablet-landscape {
-      display: block;
+	 button.contact-trigger {
+		 cursor: pointer;
+	    background-color: #939597;
+	    color: #fff;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 0.75px;
+        border: 1px solid $color_border_grey;
+        padding: 12px 16px;
+        width: 200px;
+	  }  
+  
+  .right-column {
+	    @include tablet-landscape {
+	      width: 50%;
+	    }
+	    
+	  .single-project-gallery {
 
-      .slick-track {
-        transform: translate3d(0, 0px, 0px) !important;
-        width: 100% !important;
-      }
-
-      .slick-slide{
-        width: 125px !important;
-        padding: 5px;
-        box-sizing: border-box;
-      }
-
-    }
-  }
-
-  .single-project-gallery {
-    @include tablet-landscape {
-      width: 50%;
-    }
-
-    img.slick-slide {
-      position: relative;
-    }
-
-    .fa.slick-arrow {
-      font-size: 50px;
-      color: #fff;
-      position: absolute;
-      z-index: 999;
-      text-shadow: 0 0 15px #5f5f5f;
-      transform: translateY(-50%);
-      top: 60px;
-    }
-    .fa-angle-left {
-      left: 8px;
-    }
-
-    .fa-angle-right {
-      right: 8px;
-    }
-
-    .slick-dots {
-      list-style: none;
-      margin: 15px 0 0 15px;
-      padding: 0;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-
-      @include desktop {
-        margin-left: 0;
-      }
-
-      li {
-        flex-basis: 150px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        flex-shrink: 0;
-
-        img {
-          width: 100%;
-          height: auto;
-        }
-
-        &:nth-child(even) {
-          padding-right: 0;
-        }
-
-        @include tablet-portrait {
-          flex-basis: 150px;
-        }
-
-        &:nth-child(even) {
-          padding-right: 10px;
-        }
-      }
-    }
-  }
+	
+	    img.slick-slide {
+	      position: relative;
+	    }
+	
+	    .fa.slick-arrow {
+	      font-size: 50px;
+	      color: #fff;
+	      position: absolute;
+	      z-index: 999;
+	      text-shadow: 0 0 15px #5f5f5f;
+	      -webkit-transform: translateY(-50%);
+	          -ms-transform: translateY(-50%);
+	              transform: translateY(-50%);
+	      top: 60px;
+	      top: 50%;
+	    }
+	    .fa-angle-left {
+	      left: 8px;
+	    }
+	
+	    .fa-angle-right {
+	      right: 8px;
+	    }
+	
+	    .slick-dots {
+	      list-style: none;
+	      margin: 15px 0 0 15px;
+	      padding: 0;
+	      display: -webkit-box;
+	      display: -ms-flexbox;
+	      display: flex;
+	      -webkit-box-orient: horizontal;
+	      -webkit-box-direction: normal;
+	          -ms-flex-flow: row wrap;
+	              flex-flow: row wrap;
+	      -webkit-box-pack: start;
+	          -ms-flex-pack: start;
+	              justify-content: flex-start;
+	
+	      @include desktop {
+	        margin-left: 0;
+	      }
+	
+	      li {
+	        -ms-flex-preferred-size: 150px;
+	            flex-basis: 150px;
+	        padding-right: 10px;
+	        padding-bottom: 10px;
+	        -ms-flex-negative: 0;
+	            flex-shrink: 0;
+	
+	        img {
+	          width: 100%;
+	          height: auto;
+	        }
+	
+	        &:nth-child(even) {
+	          padding-right: 0;
+	        }
+	
+	        @include tablet-portrait {
+	          -ms-flex-preferred-size: 150px;
+	              flex-basis: 150px;
+	        }
+	
+	        &:nth-child(even) {
+	          padding-right: 10px;
+	        }
+	      }
+	    }
+	  }
+	
+	  .thumbnails-gallery {
+		  margin-top: 8px;
+	    margin-bottom: 15px;
+	    display: none;
+	    @include tablet-landscape {
+	      display: block;
+	
+	      .slick-track {
+	        -webkit-transform: translate3d(0, 0px, 0px) !important;
+	                transform: translate3d(0, 0px, 0px) !important;
+	        width: 100% !important;
+	      }
+	
+	      .slick-slide{
+	        width: 125px !important;
+	        padding: 5px;
+	        -webkit-box-sizing: border-box;
+	                box-sizing: border-box;
+	      }
+	
+	    }
+	  }
+	  
+   }
 
 }

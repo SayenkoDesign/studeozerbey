@@ -32,7 +32,35 @@
                     }
                 } ?>
             </div>
-            <div class="thumbnails-gallery">
+            
+            <button type="button" class="button btn contact-trigger spu-open-977">Contact Lauren & Kyle</button>
+            
+        </div>
+        
+        <div class="right-column">
+        
+	        <?php if( $images ): ?>
+	            <div class="single-project-gallery" id="big-image">
+	                <?php foreach( $images as $image ): ?>
+	                    <img
+	                        srcset="
+	                            <?php echo esc_url( $image['sizes']['project-mobile'] ); ?> 480w,
+	                            <?php echo esc_url( $image['sizes']['large'] ); ?> 1024w,
+	                            <?php echo esc_url( $image['sizes']['project-fullwidth'] ); ?> 1440w
+	                        "
+	                        sizes="
+	                            (max-width: 480px) 480px,
+	                            (max-width: 1024px) 1024px,
+	                            1440px
+	                        "
+	                        src="<?php echo esc_url( $image['sizes']['project-fullwidth'] ); ?>"
+	                        alt="<?php echo $image['alt']; ?>"
+	                    />
+	                <?php endforeach; ?>
+	            </div>
+	        <?php endif; ?>
+	        
+	        <div class="thumbnails-gallery">
                 <?php foreach( $images as $image ): $i++; ?>
                     <a href="#" data-slide="<?php echo $i; ?>" class="thumbnail">
                         <img  src="<?php echo esc_url( $image['sizes']['thumbnail'] ); ?>"
@@ -44,28 +72,9 @@
                 endforeach; 
                 ?>
             </div>
+        
         </div>
         
-        <?php if( $images ): ?>
-            <div class="single-project-gallery" id="big-image">
-                <?php foreach( $images as $image ): ?>
-                    <img
-                        srcset="
-                            <?php echo esc_url( $image['sizes']['project-mobile'] ); ?> 480w,
-                            <?php echo esc_url( $image['sizes']['large'] ); ?> 1024w,
-                            <?php echo esc_url( $image['sizes']['project-fullwidth'] ); ?> 1440w
-                        "
-                        sizes="
-                            (max-width: 480px) 480px,
-                            (max-width: 1024px) 1024px,
-                            1440px
-                        "
-                        src="<?php echo esc_url( $image['sizes']['project-fullwidth'] ); ?>"
-                        alt="<?php echo $image['alt']; ?>"
-                    />
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
     </div>
 </div>
 

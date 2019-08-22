@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
         prevArrow: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
         nextArrow: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
         fade: true,
-        adaptiveHeight: true,
+        adaptiveHeight: true
     });
 
 
@@ -13,6 +13,7 @@ jQuery(document).ready(function ($) {
         prevArrow: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
         nextArrow: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
         fade: true,
+         adaptiveHeight: true
     });
 
     $('a[data-slide]').click(function(e) {
