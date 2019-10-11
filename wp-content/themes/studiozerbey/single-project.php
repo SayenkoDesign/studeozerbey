@@ -24,6 +24,16 @@
         <div class="left-column">
             <div class="individual-project-text">
                 <h1 class="individual-project-title"><?php the_title(); ?></h1>
+                <!-- AddToAny BEGIN -->
+                <div class="a2a_kit a2a_default_style">
+                <a class="a2a_button_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="a2a_button_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a class="a2a_button_linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a class="a2a_button_pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                <a class="a2a_button_email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                </div>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                <!-- AddToAny END -->
                 <?php
                 if ( have_posts() ) {
                     while ( have_posts() ) {

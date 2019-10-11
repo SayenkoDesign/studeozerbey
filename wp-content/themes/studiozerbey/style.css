@@ -573,6 +573,13 @@ a, a:active, a:focus {
         -webkit-box-sizing: border-box;
         box-sizing: border-box; } }
 
+.individual-project-page-wrapper .a2a_kit .fa {
+  color: transparent;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #393034;
+  padding: 0 10px;
+  font-size: 20px; }
+
 .about-us-page-wrapper {
   flex-flow: row wrap;
   padding: 0;
