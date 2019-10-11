@@ -94,6 +94,14 @@ add_image_size( 'project-box', '460', '306', array( "center", "center") );
 add_image_size( 'medium_large', '768', '0', false );
 add_image_size( 'project-fullwidth', '1440', '0', false );
 add_image_size( 'project-mobile', '480', '0', false );
+add_image_size( 'project-gallery-thumb', '352', '352', true );
+
+/*
+add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
+function form_submit_button( $button, $form ) {
+    return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'><span>Contact Us</span></button>";
+}
+*/
 
 
 // BE Media From Production

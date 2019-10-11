@@ -24,12 +24,11 @@
 
     <div class="contact">
         <div class="contact-information">
-            <h3 class="phone-number">Ph: <p><?php esc_html( the_field( 'telephone_number' , 'options') ); ?></p></h3>
-            <p class="email-address"><?php esc_html( the_field( 'email_address' , 'options') ); ?></p>
+<!--             <p class="email-address"><?php esc_html( the_field( 'email_address' , 'options') ); ?></p> -->
         </div>
         <div class="contact-form">
 
-            <?php gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
+            <?php gravity_form( 2, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
         </div>
     </div>
 

@@ -81,6 +81,26 @@ a, a:active, a:focus {
 
 // Button styles
 
+#gform_submit_button_2,
+.thank-you-page .copy .thank-you-page-content button {
+	padding: 12px 16px;            
+	cursor: pointer;
+	background-color: #00a2bc;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 0.75px;
+	border: 1px solid $color_border_grey;
+	border-radius: 10px;
+	padding: 12px 16px;
+	width: 200px;
+	transition: background-color 0.25s ease;
+	
+	&:hover {
+	background-color: $color_border_grey;
+	}
+}
+
 .zerbey-button {
   text-transform: uppercase;
   text-decoration: none;

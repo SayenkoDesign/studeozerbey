@@ -33,7 +33,7 @@
                 } ?>
             </div>
             
-            <button type="button" class="button btn contact-trigger spu-open-977">Contact Lauren & Kyle</button>
+            <button type="button" class="button btn contact-trigger spu-open-977">Contact Us</button>
             
         </div>
         
@@ -63,7 +63,7 @@
 	        <div class="thumbnails-gallery">
                 <?php foreach( $images as $image ): $i++; ?>
                     <a href="#" data-slide="<?php echo $i; ?>" class="thumbnail">
-                        <img  src="<?php echo esc_url( $image['sizes']['thumbnail'] ); ?>"
+                        <img  src="<?php echo esc_url( $image['sizes']['project-gallery-thumb'] ); ?>"
                             alt="<?php echo $image['alt']; ?>"
                         />
                     </a>
