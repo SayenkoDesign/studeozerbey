@@ -5,6 +5,14 @@
             <?php if (get_field( 'facebook_link', 'option' )) : ?>
                 <a class="facebook" target="_blank" href="<?php echo esc_url( get_field( 'facebook_link', 'option' ) ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <?php endif ?>
+            
+            <?php if (get_field( 'pinterest_link', 'option' )) : ?>
+                <a class="pinterest" target="_blank" href="<?php echo esc_url( get_field( 'pinterest_link', 'option' ) ); ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+            <?php endif ?>
+            
+            <?php if (get_field( 'instagram_link', 'option' )) : ?>
+                <a class="instagram" target="_blank" href="<?php echo esc_url( get_field( 'instagram_link', 'option' ) ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <?php endif ?>
 
             <?php if (get_field( 'houzz_link', 'option' )) : ?>
                 <a class="houzz" target="_blank" href="<?php echo esc_url( get_field( 'houzz_link', 'option' ) ); ?>"><i class="fa fa-houzz" aria-hidden="true"></i></a>
