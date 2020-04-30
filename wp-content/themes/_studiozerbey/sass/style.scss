@@ -1,0 +1,214 @@
+/*
+Theme Name: Studio Zerbey
+Theme URI:
+Author: Spark Consulting
+Author URI: sparkdev.io
+Description: Architecture + Design
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:
+Tags:
+*/
+
+//Theme colors
+$color_text_grey: #393034;
+$color_logo_grey: #695D62;
+$color_nav_grey: #939597;
+$color_button_grey: #6C6065;
+$color_light_grey: #cecece;
+$color_border_grey: #999999;
+
+//Media Queries
+
+@mixin not-mobile {
+  @media screen and (min-width: 415px) {
+    @content
+  }
+}
+
+@mixin tablet-portrait {
+  @media screen and (min-width: 768px) {
+    @content
+  }
+}
+
+@mixin tablet-landscape {
+  @media screen and (min-width: 1024px) {
+    @content
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content
+  }
+}
+
+@mixin fullwidth {
+  @media screen and (min-width: 1440px) {
+    @content
+  }
+}
+
+//General styles
+
+body,
+header {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+strong {
+  color: #00a2bc;
+}
+
+a, a:active, a:focus {
+  color: #00a2bc;
+}
+
+//@import "css/reset.css";
+@import "css/font-awesome.min.css";
+@import "css/fonts.css";
+@import "header";
+@import "front-page";
+@import "projects-page";
+@import "single-project";
+@import "about-us-page";
+@import "services-page";
+@import "contact-us-page";
+@import "thank-you-page";
+@import "footer";
+
+// Button styles
+
+#gform_submit_button_2,
+.thank-you-page .copy .thank-you-page-content button {
+	padding: 12px 16px;            
+	cursor: pointer;
+	background-color: #00a2bc;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 0.75px;
+	border: 1px solid $color_border_grey;
+	border-radius: 10px;
+	padding: 12px 16px;
+	width: 200px;
+	transition: background-color 0.25s ease;
+	
+	&:hover {
+	background-color: $color_border_grey;
+	}
+}
+
+.zerbey-button {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 10px;
+  color: $color_button_grey;
+  letter-spacing: 0.75px;
+  border: 1px solid rgba(108,96,101,0.36);
+  padding: 12px 16px;
+
+  .fa-angle-right {
+    padding-left: 5px;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    .fa-angle-right {
+      padding-left: 10px;
+    }
+  }
+}
+
+.zerbey-button-lightgrey-border {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 10px;
+  font-family: 'Calibri', sans-serif;
+  color: $color_button_grey;
+  letter-spacing: 0.75px;
+  padding: 10px 15px;
+  display: inline-block;
+  border: 1px solid $color_light_grey;
+
+  .fa-angle-right {
+    padding-left: 5px;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    .fa-angle-right {
+      padding-left: 10px;
+    }
+  }
+}
+
+//Heading and paragraph styles
+
+h1 {
+  text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 1.68px;
+  line-height: 30px;
+  color: $color_button_grey;
+  font-family: 'Calibri', 'sans-serif';
+}
+
+
+h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: $color_button_grey;
+  letter-spacing: 1.5px;
+  line-height: 28px;
+  font-family: 'Calibri', 'sans-serif';
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: $color_button_grey;
+  letter-spacing: 1.68px;
+  line-height: 16.5px;
+  font-family: 'Calibri', 'sans-serif';
+}
+
+h4 {
+  font-size: 12px;
+  color: $color_text_grey;
+  letter-spacing: 0.6px;
+  line-height: 15px;
+  text-transform: uppercase;
+  font-family: 'Calibri', 'sans-serif';
+}
+
+p {
+  font-size: 16px;
+  color: $color_text_grey;
+  letter-spacing: 0.96px;
+  line-height: 25px;
+  font-family: 'Calibri', 'sans-serif';
+}
+
+span {
+  font-family: 'Calibri', 'sans-serif';
+}
+
+
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.aligncenter {
+  margin: 0 auto;
+}
+
+body {
+  padding: 15px 10px 0;
+}

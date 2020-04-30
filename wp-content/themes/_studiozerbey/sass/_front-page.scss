@@ -7,9 +7,7 @@
   }
 
   .homepage-project-slider {
-    
-    overflow: hidden;
-    
+
     @include desktop {
       width: 60%;
     }
@@ -17,53 +15,35 @@
     margin-top: 28px;
 
     .slick-carousel {
-      .fa.slick-arrow {
-          cursor: pointer;
-	      font-size: 50px;
-	      color: #ffffff;
-	      position: absolute;
-	      z-index: 999;
-	      top: 0;
-          height: calc(100% - 62px);
-          width: 60px;
-          //background: red;
-          
-          &:before {
-            position: absolute;
-            display: block;
-            top: 50%;
-          }
-	    }
-	    .fa-angle-left {
-	      left: 0;
-          
-          &:before {
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-	          -ms-transform: translateX(-50%);
-	              transform: translateX(-50%);
-          }
-	    }
-	
-	    .fa-angle-right {
-	      right: 0;
-          
-          &:before {
-            right: 50%;
-            -webkit-transform: translateX(50%);
-	          -ms-transform: translateX(50%);
-	              transform: translateX(50%);
-          }
-	    }
+      .slick-arrow {
+        font-size: 50px;
+        color: #fff;
+        position: absolute;
+        z-index: 999;
+        top: 35%;
+
+        @include tablet-portrait {
+          top: 50%;
+        }
+      }
+      
+      .fa-angle-left,
+	  .fa-angle-right {
+		  margin-top: -20px;
+	  }
+
+      .fa-angle-left {
+        left: 8px;
+      }
+
+      .fa-angle-right {
+        right: 8px;
+      }
 
       .homepage-individual-project {
 
         @include tablet-portrait {
           position: relative;
-        }
-        
-        a {
-            display: block;   
         }
 
         img {
@@ -437,7 +417,6 @@
                     -webkit-filter: grayscale(100%);
                     filter: grayscale(100%);
                     -webkit-transition: .3s ease-in-out; 
-                    opacity: .4;
                 }
             }
         }

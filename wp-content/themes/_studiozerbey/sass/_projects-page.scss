@@ -60,10 +60,6 @@
     @include tablet-landscape {
       flex-basis: calc( 100% / 3 - 20px );
     }
-    
-    a {
-        display: block;   
-    }
 
     img {
       width: 100%;

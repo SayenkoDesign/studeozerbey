@@ -12,9 +12,7 @@
                 <?php foreach( $posts as $post): ?>
                     <div class="homepage-individual-project">
                         <?php setup_postdata($post); ?>
-                        <a href="<?php the_permalink(); ?>">
                         <?php the_post_thumbnail( $size = 'large' ); ?>
-                        </a>
                         <div class="featured-project-banner">
                             <a class="zerbey-button" href="<?php the_permalink(); ?>"><span><?php echo $featured_project_button_text ?></span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             <h3 class="featured-project-title"><?php the_title(); ?></h3>
