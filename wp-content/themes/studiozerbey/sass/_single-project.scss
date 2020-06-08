@@ -76,42 +76,50 @@
 	    }
 	
 	    .fa.slick-arrow {
+          background: rgba(#333,0.5);
+          height: 60px;
+          width: 60px;
 	      font-size: 50px;
-	      color: #939597;
+	      color: #fff;
 	      position: absolute;
 	      z-index: 999;
-	      -webkit-transform: translateY(-50%);
-	          -ms-transform: translateY(-50%);
-	              transform: translateY(-50%);
-	      top: 60px;
-	      top: 50%;
+	      top: 0;
           cursor: pointer;
           
           &:after {
             content: '';
-            cursor: pointer;
             position: absolute;
-            display: block;
-            top: -50vh;
-            height: 100vh;
             width: 60px;
-            //background: rgba(255,255,255,0.75); 
-            z-index: -1;
+            top: 0;
+            height: 100vh;   
           }
+
 	    }
 	    .fa-angle-left {
-	      left: 21px;
+	      left: 0px;
           
           &:after {
-            left: -21px;
+            left: 0;   
+          }
+          
+          &:before {
+            position: absolute;
+            left: 20px;
+            top: 3px;
           }
 	    }
 	
 	    .fa-angle-right {
-	      right: 21px;
+	      right: 0;
           
           &:after {
-            right: -21px;
+            right: 0;   
+          }
+          
+          &:before {
+            position: absolute;
+            right: 20px;
+            top: 3px;
           }
 	    }
 	
