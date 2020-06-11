@@ -26,35 +26,46 @@
 	      top: 0;
           height: calc(100% - 62px);
           width: 60px;
-          //background: red;
           
           &:before {
             position: absolute;
             display: block;
-            top: 50%;
+            z-index: 2;
+            top: 3px;
           }
-	    }
-	    .fa-angle-left {
-	      left: 0;
           
-          &:before {
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-	          -ms-transform: translateX(-50%);
-	              transform: translateX(-50%);
-          }
+          &.fa-angle-left {
+              left: 0;
+              
+              &:before {
+                left: 20px;
+              }
+              
+              &:after {
+                content: '';
+                background: rgba(#333,0.5);
+                height: 60px;
+                width: 60px; 
+                display: block;  
+              }
+            }
+        
+            &.fa-angle-right {
+              right: 0;
+              
+              &:before {
+                right: 20px;
+              }
+              &:after {
+                content: '';
+                background: rgba(#333,0.5);
+                height: 60px;
+                width: 60px; 
+                display: block;  
+              }
+            }
 	    }
-	
-	    .fa-angle-right {
-	      right: 0;
-          
-          &:before {
-            right: 50%;
-            -webkit-transform: translateX(50%);
-	          -ms-transform: translateX(50%);
-	              transform: translateX(50%);
-          }
-	    }
+	    
 
       .homepage-individual-project {
 
