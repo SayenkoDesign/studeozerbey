@@ -5,6 +5,12 @@
     <?php wp_head(); ?>
     <meta name="google-site-verification" content="2TpejPFnbIH0M7l3MI5jk18MrlxH5EGKdJNQh1ie4FM" />
 	
+		<!-- pinterest varification code -->
+
+	<meta name="p:domain_verify" content="03da2fbae0cce8225a4c03d0b1aed49f"/>
+
+
+	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141053484-1"></script>
 <script>

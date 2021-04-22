@@ -108,4 +108,4 @@ function form_submit_button( $button, $form ) {
 function prefix_production_url( $url ) {
 	return 'https://studiozerbey.com';
 }
-// add_filter( 'be_media_from_production_url', 'prefix_production_url' );
+add_filter( 'be_media_from_production_url', 'prefix_production_url' );
