@@ -16,8 +16,12 @@ add_action( 'wp_enqueue_scripts', 'studiozerbey_scripts' );
 
 
 
-require_once('inc/cpts.php');
-require_once('inc/taxonomies.php');
+include_once('inc/cpts.php');
+include_once('inc/taxonomies.php');
+
+include_once('inc/projects.php');
+include_once('inc/resources.php');
+include_once('inc/icon.php');
 
 add_action('admin_head-nav-menus.php', 'wpclean_add_metabox_menu_posttype_archive');
 
@@ -86,6 +90,14 @@ add_filter( 'nav_menu_css_class', 'set_project_taxonomy_menu_class', 10, 2 );
 
 add_theme_support( 'post-thumbnails' );
 
+add_theme_support( 'title-tag' );
+
+// This theme uses wp_nav_menu() in one location.
+register_nav_menus( array(
+    'primary'       => esc_html__( 'Primary Menu', '_s' ),
+    'resources'     => esc_html__( 'Resources Menu', '_s' )
+) );
+
 
 //custom image sizes
 
@@ -96,16 +108,25 @@ add_image_size( 'project-fullwidth', '1440', '0', false );
 add_image_size( 'project-mobile', '480', '0', false );
 add_image_size( 'project-gallery-thumb', '352', '352', true );
 
-/*
-add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
-function form_submit_button( $button, $form ) {
-    return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'><span>Contact Us</span></button>";
+// Gutenberg just for posts
+add_filter( 'use_block_editor_for_post_type', function ( $use_block_editor, $post_type ) {
+	if ( 'post' !== $post_type ) {
+		return false;
+	}
+	return $use_block_editor;
+}, 10, 2 );
+
+
+
+function disable_sharedaddy() {
+    add_filter( 'sharing_show', '__return_false' );
 }
-*/
+add_action( 'init', 'disable_sharedaddy' );
+
 
 
 // BE Media From Production
 function prefix_production_url( $url ) {
 	return 'https://studiozerbey.com';
 }
-add_filter( 'be_media_from_production_url', 'prefix_production_url' );
+// add_filter( 'be_media_from_production_url', 'prefix_production_url' );

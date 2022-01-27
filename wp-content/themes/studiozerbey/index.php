@@ -19,14 +19,45 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<header class="archive-header">
+			<?php
+			$secondary_title = '';
+
+			if( is_category() ) {
+				$secondary_title = sprintf( '<span>/%s</span>', single_cat_title( '', false ) );
+			}
+
+			if( is_tag() ) {
+				$secondary_title = '/' . sprintf( '<span>/%s</span>', single_tag_title( '', false ) );
+			}
+			?>
+			<h1 class="page-title"><?php echo get_the_title( get_option('page_for_posts', true) ) . $secondary_title; ?></h1>
+			
+			<div class="nav-bar">
+			<div class="btn">
+				<span class="label">Select Category</span>
+				<span class="open"></span>
+				<span class="close"></span>
+			</div>
+			<?php
+			wp_nav_menu( [ 'container' => '', 'theme_location' => 'resources' ] );
+			?>
+			</div>
+
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'resources',
+				'walker'         => new Walker_Nav_Menu_Dropdown(),
+				'items_wrap'     => '<div class="mobile-resources-menu"><h3>Select Category</h3><form><select onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
+			) );	
+			?>
+
+		</header>
+
 		<?php if ( have_posts() ) : ?>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
-
+			<div class="posts-grid">
+			
 			<?php
 			// Start the loop.
 			while ( have_posts() ) : the_post();
@@ -41,12 +72,44 @@ get_header(); ?>
 			// End the loop.
 			endwhile;
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-				'next_text'          => __( 'Next page', 'twentyfifteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-			) );
+			?>
+			</div>
+			<?php
+
+			if( function_exists( '_s_paginate_links' ) ) {
+				
+				$arrow_left = _s_get_icon(
+					[
+					'icon'	=> 'arrow-left',
+					'group'	=> 'theme',
+					'width'	=> '8',
+					'height' => '12',
+					'label'	=> false,
+					] );
+			
+				$arrow_right = _s_get_icon(
+						[
+						'icon'	=> 'arrow-right',
+						'group'	=> 'theme',
+						'width'	=> '8',
+						'height' => '12',
+						'label'	=> false,
+						] );
+				
+				echo _s_paginate_links(
+					[
+						'prev_text'          => sprintf( '%s<span class="screen-reader-text">%s</span>', 
+														  $arrow_left, __('Previous', '_s') ),
+						'next_text'          => sprintf( '<span class="screen-reader-text">%s</span>%s', 
+														  __('Next', '_s'), $arrow_right ),
+					]
+				);
+			} else {
+				echo paginate_links();   
+			}
+			?>
+			
+			<?php
 
 		// If no content, include the "No posts found" template.
 		else :

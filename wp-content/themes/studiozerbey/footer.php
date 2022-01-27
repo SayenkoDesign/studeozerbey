@@ -27,3 +27,6 @@
         <span class="copyright">Copyright &copy; <?php echo date("Y"); ?> Studio Zerbey | <?php echo esc_html( get_field('studio_location', 'option') ); ?> | All Rights Reserved</span>
     </div>
 </footer>
+
+</body>
+</html>

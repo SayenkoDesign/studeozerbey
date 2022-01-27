@@ -18,6 +18,29 @@ $color_button_grey: #6C6065;
 $color_light_grey: #cecece;
 $color_border_grey: #999999;
 
+// functions
+$rem-base: 16px;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+  @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+  @return $remValues;
+}
+
 //Media Queries
 
 @mixin not-mobile {
@@ -52,10 +75,31 @@ $color_border_grey: #999999;
 
 //General styles
 
+html {
+  box-sizing: border-box;
+
+  *, :after, :before {
+    box-sizing: inherit;
+  }
+}
+
 body,
 header {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 
 strong {
@@ -77,7 +121,12 @@ a, a:active, a:focus {
 @import "services-page";
 @import "contact-us-page";
 @import "thank-you-page";
+@import "resources";
+@import "single-post";
+
 @import "footer";
+
+@import "addtoany";
 
 // Button styles
 
@@ -210,5 +259,10 @@ span {
 }
 
 body {
-  padding: 15px 10px 0;
+  padding: 15px 20px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

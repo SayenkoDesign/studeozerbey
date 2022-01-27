@@ -28,6 +28,7 @@ $terms = get_terms( array(
 <?php
 $args = array(
     'post_type' => 'project',
+    'posts_per_page' => 500
 );
 
 $projects = new WP_Query($args);

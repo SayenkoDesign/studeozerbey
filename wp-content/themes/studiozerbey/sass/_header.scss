@@ -57,6 +57,7 @@
       
       @include tablet-portrait {
         display: flex;
+        flex-wrap: wrap;
         border-left: 0;
         margin-top: 8px;
       }

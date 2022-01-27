@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,7 @@
 	
 	
 </head>
-<body>
+<body <?php body_class();?>>
 <header class="main-header">
     <div class="logo">
         <a href="<?php echo esc_url( home_url() ); ?>">

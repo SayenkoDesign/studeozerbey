@@ -88,7 +88,7 @@
                     ?>
                     <div class="press-item">
                         <a href="<?php echo(!empty($pdf) ? $pdf : $link) ?>" target="_blank">
-                            <img src="<?php echo empty( $cover_image ) ? $default_image : $cover_image ?>" alt="Studio Zerbey in the media">
+                            <img src="<?php echo empty( $cover_image ) ? $default_image : $cover_image ?>" alt="Studio Zerbey in the media" loading="lazy">
                         </a>
                         <div class="meta">
                             <h4>

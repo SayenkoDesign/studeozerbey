@@ -28,7 +28,7 @@
 
     <div class="homepage-about-zerbey">
         <div class="about-text">
-            <p><?php esc_html( the_field("main_content_text") ); ?></p>
+            <?php the_field("main_content_text"); ?>
             <a class="zerbey-button-lightgrey-border" href="<?php echo esc_url( site_url( '/services' ) ); ?>"><span><?php esc_html( the_field ("main_content_button_label") ); ?></span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
         </div>
         <div class="about-blurbs">
@@ -134,6 +134,26 @@ if( have_rows('logos') ) :
 </section>
 <?php
 endif;
+?>
+
+<?php
+if( shortcode_exists( 'instagram-feed' ) ) {
+    echo do_shortcode( '[instagram-feed]' );
+
+    $photos = [ 'sbi_17862804038475384', 'sbi_17880659212788483', 'sbi_18129642667025190', 'sbi_17885119105440915', 'sbi_18108649759010071'];
+
+    echo '<style>';
+    echo '#sb_instagram { margin: 60px auto; }';
+    
+    foreach( $photos as $photo ) {
+        printf( '#%s .sbi_photo {
+            background-size: auto!important;
+        }', $photo );
+    }
+    
+    echo '</style>';
+}
+
 ?>
 
 <?php get_footer(); ?>

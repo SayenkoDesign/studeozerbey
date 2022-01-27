@@ -1,0 +1,42 @@
+// Add To Any
+
+.a2a_kit, .a2a_menu, 
+.a2a_modal, .a2a_overlay {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    outline: 0;
+}
+
+.a2a_floating_style, .a2a_overlay_style {
+    padding: 4px;
+}
+
+.a2a_floating_style {
+    left: 0;
+    position: fixed;
+    z-index: 9999995;
+}
+
+.a2a_vertical_style {
+    top: 30%;
+    z-index: 999;
+	border-top: 2px solid #00A2BC;
+    border-right: 2px solid #00A2BC;
+    border-bottom: 2px solid #00A2BC;
+	border-radius: 1px;
+}
+
+.a2a_vertical_style a {
+    clear: left;
+    display: block;
+    overflow: hidden;
+    padding: 4px;
+	margin: 8px 0;
+    text-decoration: none;
+	text-align: center;
+}
+
+.a2a_vertical_style .fa {
+    padding: 0!important;
+    font-size: 24px;
+}

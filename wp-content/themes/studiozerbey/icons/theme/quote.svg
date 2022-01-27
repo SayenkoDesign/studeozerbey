@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>blocks-with-angled-cuts</title>
+    <g id="Mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Blog-Post" transform="translate(-331.000000, -1789.000000)" fill="#030104" fill-rule="nonzero">
+            <g id="blocks-with-angled-cuts" transform="translate(331.000000, 1789.000000)">
+                <polygon id="Path" points="32 24 32 0 20 12 20 24"></polygon>
+                <polygon id="Path" points="12 24 12 0 0 12 0 24"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

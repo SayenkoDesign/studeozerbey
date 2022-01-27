@@ -9,7 +9,6 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    
     <?php     
     $post_image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
     
@@ -25,9 +24,27 @@
     }  
     
     $post_category = '';
+
+    if( $post_term = _s_get_primary_term() ) {
+        $post_category = sprintf( '<span class="post-category"><a href="%s">%s</a></span>', 
+                                   get_category_link( $post_term ), $post_term->name );
+    }
        
-    $post_title = sprintf( '<h3 class="h4"><a href="%s">%s</a></h3>', get_permalink(), get_the_title() );
-    $read_more = sprintf( '<p class="more"><a href="%s" class="read-more fancy-link">%s</a></p>', get_permalink(), __( 'read more', '_s' ) ) ;
+    $post_title = sprintf( '<h2><a href="%s">%s</a></h2>', get_permalink(), get_the_title() );
+    
+    $read_more = sprintf( '<p class="more"><a href="%s" class="read-more fancy-link"><span>%s</span>%s</a></p>', 
+                           get_permalink(), __( 'read more', '_s' ),
+                           
+                           _s_get_icon(
+                            [
+                            'icon'	=> 'arrow-right',
+                            'group'	=> 'theme',
+                            'width'	=> '8',
+                            'height' => '12',
+                            'label'	=> false,
+                            ] )
+                           
+                           ) ;
         
     printf( '<a href="%s" class="post-hero" style="%s"></a>', get_permalink(), $post_image );
                     
